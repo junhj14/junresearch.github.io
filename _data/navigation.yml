@@ -1,0 +1,16 @@
+# main links
+main:
+  - title: "Home"
+    url: /
+  - title: "My Philosophy"
+    url: /philosophy/
+  - title: "CSA Structure"
+    url: /csa/
+  - title: "ONN"
+    url: /onn/
+  - title: "Introduction"
+    url: /ai-robotics/
+  - title: "Research"
+    url: /research/
+  - title: "Posts"
+    url: /posts/
