@@ -1,14 +1,13 @@
-remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "default"  # 또는 "aqua", "dark", "mint", "plum", 등
+# 최소 설정 - 깔끔하고 작동 보장
 
-# 기본 사이트 정보
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "default"  # 다른 옵션: "aqua", "dark", "mint", "sunrise", ...
+
 title: "Jun's Blog"
-subtitle: "Industrial AI & Robotics"
-name: "Jun Hyojae"
-description: "A blog about robotics, AI, and intelligent automation."
+description: "Industrial AI and Robotics by Jun Hyojae"
 url: "https://junhj14.github.io"
-baseurl: ""  # 루트에 배포 시 빈 값
-repository: "junhj14/junhj14.github.io"
+baseurl: ""  # 꼭 빈값: 사용자.github.io로 배포 시
+
 locale: "ko-KR"
 timezone: "Asia/Seoul"
 markdown: kramdown
@@ -17,7 +16,7 @@ markdown: kramdown
 author:
   name: "Jun Hyojae"
   avatar: "/assets/images/profile.jpg"
-  bio: "Engineer & Researcher in Industrial AI and Cognitive Robotics"
+  bio: "Engineer in Industrial AI & Cognitive Robotics"
   location: "Seoul, Korea"
   email: "j4512j@naver.com"
   links:
@@ -31,13 +30,19 @@ author:
       icon: "fas fa-envelope"
       url: "mailto:j4512j@naver.com"
 
-# 테마 기능
+# 검색
 search: true
 search_provider: lunr
 lunr:
   search_within_pages: true
 
-# 페이지/포스트 공통 설정
+# 마크다운 설정
+kramdown:
+  input: GFM
+  toc_levels: 1..6
+  auto_ids: true
+
+# 페이지/포스트 기본값
 defaults:
   - scope:
       path: ""
@@ -63,48 +68,34 @@ defaults:
         nav: "main"
       read_time: true
 
-# 사이드바 메뉴 설정 (필요 시 _data/navigation.yml 파일 필요)
-# sidebar:
-#   nav: "main"
-
-# 마크다운
-kramdown:
-  input: GFM
-  auto_ids: true
-  toc_levels: 1..6
-
-# 블로그 글 목록
+# pagination
 paginate: 5
 paginate_path: /page:num/
+
+# permalink 형식
+permalink: /:year/:month/:day/:title/
 
 # 플러그인
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-gist
   - jekyll-feed
+  - jekyll-gist
   - jekyll-include-cache
   - jekyll-remote-theme
 
 whitelist:
   - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-gist
   - jekyll-feed
+  - jekyll-gist
   - jekyll-include-cache
   - jekyll-remote-theme
 
-# SEO 설정
-seo:
-  twitter:
-    username: ""
-  og_image: "/assets/images/og-default.png"
+# SEO
+og_image: "/assets/images/og-default.png"
 
-# 출력 설정
-permalink: /:year/:month/:day/:title/
-encoding: "utf-8"
-
-# 압축
+# 압축 (선택)
 compress_html:
   clippings: all
   ignore:
