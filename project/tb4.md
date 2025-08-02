@@ -44,7 +44,7 @@ Industrial safety remains a persistent challenge despite technological advanceme
 - Safety right exercise rate: Merely 16.3% have exercised work refusal
 - Post-refusal protection: Only 13.8% felt adequately protected
 
-![Industrial Accident Statistics](/assets/images/turtlebot_project/accident_statistics.png)
+![Industrial Accident Statistics]({{ site.baseurl }}/assets/images/turtlebot_project/accident_statistics.png)
 *Figure 2: Industrial accident trends 2021-2024 showing persistent safety challenges*
 
 ### 1.2 Mathematical Risk Framework
@@ -274,7 +274,7 @@ $$\sigma_A^2 = \left(\frac{\partial A}{\partial Z}\right)^2 \sigma_Z^2 + \left(\
 
 The navigation system implements a hierarchical control structure:
 
-![Navigation Architecture]({{ site.baseurl }}/assets/images/turtlebot_project/navigation_architecture.png)
+![Navigation Architecture]({{ site.baseurl }}/assets/images/turtlebot_project/navigation_architectur.png)
 *Figure 14: Navigation system state machine showing event handling hierarchy*
 
 ### 5.2 Multi-Robot Coordination Algorithm
