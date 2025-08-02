@@ -1,61 +1,14 @@
-# 최소 설정 - 깔끔하고 작동 보장
-
 remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "default"  # 다른 옵션: "aqua", "dark", "mint", "sunrise", ...
+minimal_mistakes_skin: "default"
 
 title: "Jun's Blog"
 description: "Industrial AI and Robotics by Jun Hyojae"
 url: "https://junhj14.github.io"
-baseurl: ""  # 꼭 빈값: 사용자.github.io로 배포 시
+baseurl: ""
 
-locale: "ko-KR"
-timezone: "Asia/Seoul"
 markdown: kramdown
 
-# 저자 정보
-author:
-  name: "Jun Hyojae"
-  avatar: "/assets/images/profile.jpg"
-  bio: "Engineer in Industrial AI & Cognitive Robotics"
-  location: "Seoul, Korea"
-  email: "j4512j@naver.com"
-  links:
-    - label: "GitHub"
-      icon: "fab fa-github"
-      url: "https://github.com/junhj14"
-    - label: "Google Scholar"
-      icon: "fas fa-graduation-cap"
-      url: "https://scholar.google.com/citations?user=7d_tn_4AAAAJ&hl=ko"
-    - label: "Email"
-      icon: "fas fa-envelope"
-      url: "mailto:j4512j@naver.com"
-
-# 검색
-search: true
-search_provider: lunr
-lunr:
-  search_within_pages: true
-
-# 마크다운 설정
-kramdown:
-  input: GFM
-  toc_levels: 1..6
-  auto_ids: true
-
-# 페이지/포스트 기본값
 defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      toc: true
-      toc_sticky: true
-      author_profile: true
-      sidebar:
-        nav: "main"
-      share: true
-      read_time: true
   - scope:
       path: ""
       type: pages
@@ -63,40 +16,6 @@ defaults:
       layout: single
       toc: true
       toc_sticky: true
-      author_profile: true
-      sidebar:
-        nav: "main"
-      read_time: true
 
-# pagination
-paginate: 5
-paginate_path: /page:num/
-
-# permalink 형식
-permalink: /:year/:month/:day/:title/
-
-# 플러그인
 plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-include-cache
   - jekyll-remote-theme
-
-whitelist:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-include-cache
-  - jekyll-remote-theme
-
-# SEO
-og_image: "/assets/images/og-default.png"
-
-# 압축 (선택)
-compress_html:
-  clippings: all
-  ignore:
-    envs: development
