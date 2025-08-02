@@ -1,16 +1,22 @@
-# main links
+# 사이드바 메뉴 구성
 main:
-  - title: "Home"
+  - title: "🏠 Home"
     url: /
-  - title: "My Philosophy"
+
+  - title: "🧠 My Philosophy"
     url: /philosophy/
-  - title: "CSA Structure"
+
+  - title: "🧩 CSA Structure"
     url: /csa/
-  - title: "ONN"
+
+  - title: "🕸 ONN"
     url: /onn/
-  - title: "Introduction"
+
+  - title: "🤖 Introduction to AI & Robotics"
     url: /ai-robotics/
-  - title: "Research"
+
+  - title: "📚 Research Projects"
     url: /research/
-  - title: "Posts"
+
+  - title: "📝 Blog Posts"
     url: /posts/
