@@ -1,34 +1,43 @@
-remote_theme: mmistakes/minimal-mistakes
-title: Jun's Blog
-description: A simple blog with markdown pages
-url: "https://junhj14.github.io"  # 본인의 GitHub Pages 주소
-baseurl: ""  # 하위 폴더가 없다면 빈 문자열
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "default"  # 또는 "aqua", "dark", "mint", "plum", 등
 
+# 기본 사이트 정보
+title: "Jun's Blog"
+subtitle: "Industrial AI & Robotics"
+name: "Jun Hyojae"
+description: "A blog about robotics, AI, and intelligent automation."
+url: "https://junhj14.github.io"
+baseurl: ""  # 루트에 배포 시 빈 값
+repository: "junhj14/junhj14.github.io"
+locale: "ko-KR"
+timezone: "Asia/Seoul"
+markdown: kramdown
+
+# 저자 정보
 author:
   name: "Jun Hyojae"
-  avatar: "/assets/images/profile.jpg"  # 프로필 이미지 경로 (선택)
+  avatar: "/assets/images/profile.jpg"
+  bio: "Engineer & Researcher in Industrial AI and Cognitive Robotics"
+  location: "Seoul, Korea"
+  email: "j4512j@naver.com"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/junhj14"
+    - label: "Google Scholar"
+      icon: "fas fa-graduation-cap"
+      url: "https://scholar.google.com/citations?user=7d_tn_4AAAAJ&hl=ko"
+    - label: "Email"
+      icon: "fas fa-envelope"
+      url: "mailto:j4512j@naver.com"
 
-plugins:
-  - jekyll-remote-theme
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-paginate
-  - jekyll-include-cache
+# 테마 기능
+search: true
+search_provider: lunr
+lunr:
+  search_within_pages: true
 
-# 마크다운 설정
-markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter_opts:
-    disable : false
-
-# 기본 설정
-paginate: 5
-paginate_path: "/page:num/"
-permalink: /:year/:month/:day/:title/
-
-# 사이드바 ToC 작동 설정
+# 페이지/포스트 공통 설정
 defaults:
   - scope:
       path: ""
@@ -38,3 +47,65 @@ defaults:
       toc: true
       toc_sticky: true
       author_profile: true
+      sidebar:
+        nav: "main"
+      share: true
+      read_time: true
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      toc: true
+      toc_sticky: true
+      author_profile: true
+      sidebar:
+        nav: "main"
+      read_time: true
+
+# 사이드바 메뉴 설정 (필요 시 _data/navigation.yml 파일 필요)
+# sidebar:
+#   nav: "main"
+
+# 마크다운
+kramdown:
+  input: GFM
+  auto_ids: true
+  toc_levels: 1..6
+
+# 블로그 글 목록
+paginate: 5
+paginate_path: /page:num/
+
+# 플러그인
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-remote-theme
+
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-remote-theme
+
+# SEO 설정
+seo:
+  twitter:
+    username: ""
+  og_image: "/assets/images/og-default.png"
+
+# 출력 설정
+permalink: /:year/:month/:day/:title/
+encoding: "utf-8"
+
+# 압축
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
