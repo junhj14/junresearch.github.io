@@ -3,8 +3,8 @@ minimal_mistakes_skin: "default"
 
 title: "Jun's Blog"
 description: "Industrial AI and Robotics by Jun Hyojae"
-url: "https://junresearch.github.io"
-baseurl: ""
+url: "https://junhj14.github.io"
+baseurl: "/junresearch.github.io"
 
 markdown: kramdown
 
