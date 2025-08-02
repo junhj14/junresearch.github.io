@@ -1,3 +1,10 @@
+remote_theme: mmistakes/minimal-mistakes
 title: Jun's Blog
 description: A simple blog with markdown pages
-theme: minima
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-include-cache
