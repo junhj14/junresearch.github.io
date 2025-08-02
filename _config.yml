@@ -8,6 +8,9 @@ baseurl: ""
 
 markdown: kramdown
 
+plugins:
+  - jekyll-remote-theme
+
 defaults:
   - scope:
       path: ""
@@ -16,6 +19,3 @@ defaults:
       layout: single
       toc: true
       toc_sticky: true
-
-plugins:
-  - jekyll-remote-theme
