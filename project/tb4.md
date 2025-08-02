@@ -14,7 +14,7 @@ tags:
   - Autonomous Navigation
   - Industrial IoT
 header:
-  teaser: /assets/images/turtlebot_project/system_overview.png
+  teaser: {{ site.baseurl }}/assets/images/turtlebot_project/system_overview.png
 toc: true
 toc_sticky: true
 ---
@@ -74,7 +74,7 @@ Statistical analysis indicates 78.2% of industrial accidents stem from behaviora
 | **Monitoring Gaps** | $\eta_{monitoring} < \eta_{required}$ | Real-time surveillance |
 | **Communication Barriers** | $I_{effective} = I_{transmitted} \cdot \alpha$ | Visual/audio alerts |
 
-![Risk Factor Analysis](/assets/images/turtlebot_project/risk_factors.png)
+![Risk Factor Analysis]({{ site.baseurl }}/assets/images/turtlebot_project/risk_factors.png)
 *Figure 3: Pie chart showing distribution of accident causes with behavioral factors highlighted*
 
 ---
@@ -92,7 +92,7 @@ Statistical analysis indicates 78.2% of industrial accidents stem from behaviora
 | **Navigation** | NAV2 Stack | Proven autonomous navigation |
 | **Platform** | Ubuntu 22.04 + ROS2 | Stability and community support |
 
-![Technology Stack](/assets/images/turtlebot_project/tech_stack.png)
+![Technology Stack]({{ site.baseurl }}/assets/images/turtlebot_project/tech_stack.png)
 *Figure 4: Comprehensive technology stack with integration interfaces*
 
 ### 2.2 Distributed System Architecture
@@ -100,7 +100,7 @@ Statistical analysis indicates 78.2% of industrial accidents stem from behaviora
 The system employs a hub-and-spoke topology with fault-tolerant communication:
 
 
-![System Architecture Diagram](/assets/images/turtlebot_project/system_overvies.png)
+![System Architecture Diagram]({{ site.baseurl }}/assets/images/turtlebot_project/system_overvies.png)
 *Figure 5: Detailed system architecture showing component interactions and data flow*
 
 ### 2.3 Reliability Analysis
@@ -136,7 +136,7 @@ Comparative analysis across YOLO variants using inference time distribution:
 | **YOLOv8n** | **3.8** | **1.01** | **0.856** | **6.2** |
 | YOLOv11n | 4.5 | 1.22 | 0.851 | 5.9 |
 
-![Model Performance Comparison](/assets/images/turtlebot_project/model_comparison.png)
+![Model Performance Comparison]({{ site.baseurl }}/assets/images/turtlebot_project/model_comparison.png)
 *Figure 7: Box plots showing inference time distribution across different YOLO models*
 
 **Selection Rationale:** YOLOv8n demonstrates optimal balance of accuracy, speed, and consistency for real-time industrial deployment.
@@ -157,7 +157,7 @@ Where $\phi(x,y)$ represents feature extraction at pixel $(x,y)$ and $\sigma$ is
 **PPE Compliance Assessment:**
 $$\text{PPE}_{score} = \prod_{i \in \{\text{helmet, vest, boots}\}} \max_{j} C_i^{(j)}$$
 
-![Detection Framework](/assets/images/turtlebot_project/detection_framework.png)
+![Detection Framework]({{ site.baseurl }}/assets/images/turtlebot_project/detection_framework.png)
 *Figure 8: Visual representation of detection confidence mapping and PPE scoring system*
 
 ### 3.4 Noise Analysis & Kalman Filter Design
@@ -239,7 +239,7 @@ $$H = \arctan2(\sqrt{3}(G-B), 2R-G-B) \cdot \frac{180°}{\pi}$$
 $$S = 1 - \frac{3\min(R,G,B)}{R+G+B}$$
 $$V = \frac{R+G+B}{3}$$
 
-![HSV Segmentation](/assets/images/turtlebot_project/hsv_segmentation.png)
+![HSV Segmentation]({{ site.baseurl }}/assets/images/turtlebot_project/hsv_segmentation.png)
 *Figure 12: HSV color space segmentation results showing crack isolation from background*
 
 ### 4.3 3D Area Calculation Framework
@@ -274,7 +274,7 @@ $$\sigma_A^2 = \left(\frac{\partial A}{\partial Z}\right)^2 \sigma_Z^2 + \left(\
 
 The navigation system implements a hierarchical control structure:
 
-![Navigation Architecture](/assets/images/turtlebot_project/navigation_architecture.png)
+![Navigation Architecture]({{ site.baseurl }}/assets/images/turtlebot_project/navigation_architecture.png)
 *Figure 14: Navigation system state machine showing event handling hierarchy*
 
 ### 5.2 Multi-Robot Coordination Algorithm
@@ -329,7 +329,7 @@ $$P_{MQTT_{success}} = \prod_{i=1}^{n} P_{device \rightarrow broker}$$
 
 Since devices connect independently: $P_{MQTT_{success}} \gg P_{DDS_{success}}$
 
-![Protocol Comparison](/assets/images/turtlebot_project/protocol_comparison.png)
+![Protocol Comparison]({{ site.baseurl }}/assets/images/turtlebot_project/protocol_comparison.png)
 *Figure 16: Network topology comparison showing MQTT's resilience advantages*S
 
 ### 6.2 Communication Performance Analysis
@@ -424,7 +424,7 @@ The monitoring dashboard provides real-time visualization and control capabiliti
 - Remote control capabilities
 - Performance metrics display
 
-![Web Dashboard](/assets/images/turtlebot_project/web_dashboard.png)
+![Web Dashboard]({{ site.baseurl }}/assets/images/turtlebot_project/web_dashboard.png)
 *Figure 20: Web-based dashboard interface showing real-time monitoring and control features*
 
 ### 8.2 Mobile Application Integration
@@ -435,7 +435,7 @@ The monitoring dashboard provides real-time visualization and control capabiliti
 - Emergency stop capabilities
 - Location-based event mapping
 
-![Mobile App](/assets/images/turtlebot_project/mobile_app.png)
+![Mobile App]({{ site.baseurl }}/assets/images/turtlebot_project/mobile_app.png)
 *Figure 21: Mobile application interface showing emergency response and notification features*
 
 ---
@@ -1243,7 +1243,7 @@ if __name__ == '__main__':
 
 ## Image Requirements Summary
 
-Please add the following images to `/assets/images/turtlebot_project/`:
+Please add the following images to `{{ site.baseurl }}/assets/images/turtlebot_project/`:
 
 1. **system_overview.png** - Complete system architecture diagram
 2. **accident_statistics.png** - Bar chart of industrial accident trends 2021-2024
