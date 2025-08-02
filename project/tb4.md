@@ -14,7 +14,7 @@ tags:
   - Autonomous Navigation
   - Industrial IoT
 header:
-  teaser: {{ site.baseurl }}/assets/images/turtlebot_project/system_overview.png
+  teaser: /assets/images/turtlebot_project/system_overview.png
 toc: true
 toc_sticky: true
 ---
@@ -27,7 +27,7 @@ toc_sticky: true
 
 This paper presents a comprehensive industrial safety robot system developed by Team RobotFactory as part of the K-Digital Training program. The system integrates real-time object detection, autonomous navigation, and distributed communication protocols to address critical safety challenges in industrial environments. Through rigorous mathematical analysis and experimental validation, we achieved 93% detection accuracy with 24.7% noise reduction via advanced Kalman filtering techniques.
 
-![System Overview](/assets/images/turtlebot_project/system_overview.png)
+![System Overview]({{ site.baseurl }}/assets/images/turtlebot_project/system_overview.png)
 *Figure 1: Complete system architecture showing multi-robot coordination and MQTT-based communication*
 
 ---
