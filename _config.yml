@@ -10,6 +10,7 @@ markdown: kramdown
 
 plugins:
   - jekyll-remote-theme
+  - jekyll-include-cache   # ← ✅ 이 줄 추가!
 
 defaults:
   - scope:
