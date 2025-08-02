@@ -20,3 +20,22 @@ defaults:
       layout: single
       toc: true
       toc_sticky: true
+      author_profile: true   # ✅ 이게 핵심
+
+author:
+  name: "Jun Hyojae"
+  avatar: "/assets/images/profile.jpg"  # ← 이미지 없으면 주석처리 가능
+  bio: "Industrial AI & Cognitive Robotics Engineer"
+  location: "Seoul, Korea"
+  email: "j4512j@naver.com"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/junhj14"
+    - label: "Scholar"
+      icon: "fas fa-graduation-cap"
+      url: "https://scholar.google.com/citations?user=7d_tn_4AAAAJ&hl=ko"
+    - label: "Email"
+      icon: "fas fa-envelope"
+      url: "mailto:j4512j@naver.com"
+
