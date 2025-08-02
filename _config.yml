@@ -1,6 +1,13 @@
 remote_theme: mmistakes/minimal-mistakes
 title: Jun's Blog
 description: A simple blog with markdown pages
+url: "https://junhj14.github.io"  # 본인의 GitHub Pages 주소
+baseurl: ""  # 하위 폴더가 없다면 빈 문자열
+
+author:
+  name: "Jun Hyojae"
+  avatar: "/assets/images/profile.jpg"  # 프로필 이미지 경로 (선택)
+
 plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
@@ -8,3 +15,26 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-include-cache
+
+# 마크다운 설정
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    disable : false
+
+# 기본 설정
+paginate: 5
+paginate_path: "/page:num/"
+permalink: /:year/:month/:day/:title/
+
+# 사이드바 ToC 작동 설정
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      toc: true
+      toc_sticky: true
+      author_profile: true
