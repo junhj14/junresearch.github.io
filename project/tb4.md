@@ -14,7 +14,7 @@ tags:
   - Autonomous Navigation
   - Industrial IoT
 header:
-  teaser: /assets/images/turtlebot_project/system_overview.png
+  teaser: {{ site.baseurl }}/assets/images/turtlebot_project/system_overview.png
 toc: true
 toc_sticky: true
 ---
