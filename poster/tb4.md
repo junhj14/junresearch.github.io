@@ -1,5 +1,5 @@
 ---
-layout: single        # ✅ 꼭 필요합니다!
+layout: single
 title: "Industrial Safety Robot System: A Comprehensive Multi-Modal Approach"
 excerpt: "Development and implementation of an autonomous safety monitoring system integrating YOLO-based detection, Kalman filtering, and MQTT communication for industrial hazard prevention"
 date: 2025-01-24
@@ -19,6 +19,7 @@ header:
 toc: true
 toc_sticky: true
 mathjax: true
+permalink: /poster/tb4/
 ---
 
 
