@@ -21,6 +21,7 @@ defaults:
       toc: true
       toc_sticky: true
       author_profile: true
+mathjax: true     # ✅ 이 줄이 있어야 수식이 보임!
 
 author:
   name: "Jun Hyojae"
@@ -39,4 +40,4 @@ author:
       icon: "fas fa-envelope"
       url: "mailto:j4512j@naver.com"
 
-mathjax: true     # ✅ 이 줄이 있어야 수식이 보임!
+
