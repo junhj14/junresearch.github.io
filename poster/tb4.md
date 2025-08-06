@@ -100,25 +100,30 @@ Statistical analysis indicates 78.2% of industrial accidents stem from behaviora
 | **Navigation** | NAV2 Stack | Proven autonomous navigation |
 | **Platform** | Ubuntu 22.04 + ROS2 | Stability and community support |
 
-![Technology Stack]({{ site.baseurl }}/assets/images/turtlebot_project/tech_stack.png)
+![Technology Stack]({{ site.baseurl }}/assets/images/turtlebot_project/tech_stack.png)  
 *Figure 4: Comprehensive technology stack with integration interfaces*
 
 ### 2.2 Distributed System Architecture
 
 The system employs a hub-and-spoke topology with fault-tolerant communication:
 
-
-![System Architecture Diagram]({{ site.baseurl }}/assets/images/turtlebot_project/system_overvies.png)
+![System Architecture Diagram]({{ site.baseurl }}/assets/images/turtlebot_project/system_overvies.png)  
 *Figure 5: Detailed system architecture showing component interactions and data flow*
 
 ### 2.3 Reliability Analysis
 
-For a distributed system with $n$ robots, system reliability $R_{system}$ is:
+For a distributed system with \( n \) robots, system reliability \( R_{\text{system}} \) is:
 
-$$R_{system} = 1 - \prod_{i=1}^{n}(1 - R_i)$$
+$$
+R_{\text{system}} = 1 - \prod_{i=1}^{n}(1 - R_i)
+$$
 
-With individual robot reliability $R_i = 0.95$, the system reliability for $n = 4$ robots:
-$$R_{system} = 1 - (1 - 0.95)^4 = 0.99999375$$
+With individual robot reliability \( R_i = 0.95 \), the system reliability for \( n = 4 \) robots:
+
+$$
+R_{\text{system}} = 1 - (1 - 0.95)^4 = 0.99999375
+$$
+
 
 ---
 
@@ -133,7 +138,6 @@ $$R_{system} = 1 - (1 - 0.95)^4 = 0.99999375$$
 - **Resolution:** 640×640 pixels
 - **Augmentation:** Rotation (±15°), Scaling (0.8-1.2), Brightness (±20%)
 
-
 ### 3.2 Model Performance Analysis
 
 Comparative analysis across YOLO variants using inference time distribution:
@@ -144,7 +148,7 @@ Comparative analysis across YOLO variants using inference time distribution:
 | **YOLOv8n** | **3.8** | **1.01** | **0.856** | **6.2** |
 | YOLOv11n | 4.5 | 1.22 | 0.851 | 5.9 |
 
-![Model Performance Comparison]({{ site.baseurl }}/assets/images/turtlebot_project/model_comparison.png)
+![Model Performance Comparison]({{ site.baseurl }}/assets/images/turtlebot_project/model_comparison.png)  
 *Figure 7: Box plots showing inference time distribution across different YOLO models*
 
 **Selection Rationale:** YOLOv8n demonstrates optimal balance of accuracy, speed, and consistency for real-time industrial deployment.
@@ -152,62 +156,92 @@ Comparative analysis across YOLO variants using inference time distribution:
 ### 3.3 Mathematical Framework for Detection
 
 **Spatial Detection Universe:**
-$$\mathcal{U} = \{(x,y) \mid 0 \leq x \leq W, 0 \leq y \leq H\}$$
+
+$$
+\mathcal{U} = \{(x,y) \mid 0 \leq x \leq W, 0 \leq y \leq H\}
+$$
 
 **Detection Confidence Mapping:**
-$$C(x,y) = \begin{cases} 
+
+$$
+C(x,y) = \begin{cases} 
 \sigma(\mathbf{w}^T \phi(x,y) + b) & \text{if } (x,y) \in \text{ROI} \\
 0 & \text{otherwise}
-\end{cases}$$
+\end{cases}
+$$
 
-Where $\phi(x,y)$ represents feature extraction at pixel $(x,y)$ and $\sigma$ is the sigmoid activation.
+Where \( \phi(x,y) \) represents feature extraction at pixel \( (x,y) \) and \( \sigma \) is the sigmoid activation.
 
 **PPE Compliance Assessment:**
-$$\text{PPE}_{score} = \prod_{i \in \{\text{helmet, vest, boots}\}} \max_{j} C_i^{(j)}$$
 
-![Detection Framework]({{ site.baseurl }}/assets/images/turtlebot_project/detection_framework.png)
+$$
+\text{PPE}_{score} = \prod_{i \in \{\text{helmet, vest, boots}\}} \max_{j} C_i^{(j)}
+$$
+
+![Detection Framework]({{ site.baseurl }}/assets/images/turtlebot_project/detection_framework.png)  
 *Figure 8: Visual representation of detection confidence mapping and PPE scoring system*
 
 ### 3.4 Noise Analysis & Kalman Filter Design
 
 **Sensor Noise Characterization:**
-Statistical analysis of OAK-D depth measurements reveals:
-- Standard Deviation: $\sigma = 0.4261$ m
-- Variance: $\sigma^2 = 0.1815$ m²
-- Temporal Correlation: $\rho(\tau) = 0.85 e^{-\tau/2.3}$
 
+Statistical analysis of OAK-D depth measurements reveals:
+- Standard Deviation: \( \sigma = 0.4261 \, \text{m} \)
+- Variance: \( \sigma^2 = 0.1815 \, \text{m}^2 \)
+- Temporal Correlation: \( \rho(\tau) = 0.85 e^{-\tau/2.3} \)
 
 **State Space Model Design:**
 
 For tracking human position and velocity, we employ a 4D state vector:
-$$\mathbf{x}_k = [x_k, y_k, \dot{x}_k, \dot{y}_k]^T$$
+
+$$
+\mathbf{x}_k = [x_k, y_k, \dot{x}_k, \dot{y}_k]^T
+$$
 
 **Prediction Equations:**
-$$\mathbf{x}_{k|k-1} = \mathbf{F}\mathbf{x}_{k-1|k-1} + \mathbf{B}\mathbf{u}_k$$
-$$\mathbf{P}_{k|k-1} = \mathbf{F}\mathbf{P}_{k-1|k-1}\mathbf{F}^T + \mathbf{Q}$$
+
+$$
+\mathbf{x}_{k|k-1} = \mathbf{F}\mathbf{x}_{k-1|k-1} + \mathbf{B}\mathbf{u}_k
+$$
+
+$$
+\mathbf{P}_{k|k-1} = \mathbf{F}\mathbf{P}_{k-1|k-1}\mathbf{F}^T + \mathbf{Q}
+$$
 
 **Update Equations:**
-$$\mathbf{K}_k = \mathbf{P}_{k|k-1}\mathbf{H}^T(\mathbf{H}\mathbf{P}_{k|k-1}\mathbf{H}^T + \mathbf{R})^{-1}$$
-$$\mathbf{x}_{k|k} = \mathbf{x}_{k|k-1} + \mathbf{K}_k(\mathbf{z}_k - \mathbf{H}\mathbf{x}_{k|k-1})$$
+
+$$
+\mathbf{K}_k = \mathbf{P}_{k|k-1}\mathbf{H}^T(\mathbf{H}\mathbf{P}_{k|k-1}\mathbf{H}^T + \mathbf{R})^{-1}
+$$
+
+$$
+\mathbf{x}_{k|k} = \mathbf{x}_{k|k-1} + \mathbf{K}_k(\mathbf{z}_k - \mathbf{H}\mathbf{x}_{k|k-1})
+$$
 
 Where:
-$$\mathbf{F} = \begin{bmatrix}
+
+$$
+\mathbf{F} = \begin{bmatrix}
 1 & 0 & \Delta t & 0 \\
 0 & 1 & 0 & \Delta t \\
 0 & 0 & 1 & 0 \\
 0 & 0 & 0 & 1
-\end{bmatrix}, \quad \mathbf{H} = \begin{bmatrix}
+\end{bmatrix}, \quad
+\mathbf{H} = \begin{bmatrix}
 1 & 0 & 0 & 0 \\
 0 & 1 & 0 & 0
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 **Theoretical Performance Advantage:**
 
 Comparing 2D vs 4D models, the Mean Squared Error difference:
-$$\text{MSE}_{2D} - \text{MSE}_{4D} = (\dot{x}_{k-1})^2(\Delta t)^2 \geq 0$$
 
-This proves the 4D model's theoretical superiority when velocity $\dot{x}_{k-1} \neq 0$.
+$$
+\text{MSE}_{2D} - \text{MSE}_{4D} = (\dot{x}_{k-1})^2(\Delta t)^2 \geq 0
+$$
 
+This proves the 4D model's theoretical superiority when velocity \( \dot{x}_{k-1} \neq 0 \).
 
 **Experimental Validation:**
 
@@ -228,51 +262,62 @@ This proves the 4D model's theoretical superiority when velocity $\dot{x}_{k-1} 
 
 The crack detection system employs a hybrid approach combining deep learning and classical computer vision:
 
-1. **YOLO-based Region Proposal:** Initial crack candidate identification
+1. **YOLO-based Region Proposal:** Initial crack candidate identification  
 2. **HSV Color Space Segmentation:** Precise crack boundary delineation  
-3. **Depth-Aware Area Calculation:** 3D surface area estimation
-4. **Global Coordinate Mapping:** Integration with navigation system
-
+3. **Depth-Aware Area Calculation:** 3D surface area estimation  
+4. **Global Coordinate Mapping:** Integration with navigation system  
 
 ### 4.2 HSV Segmentation Methodology
 
 **Rationale for HSV Selection:**
-- **Illumination Invariance:** Separates color information from lighting conditions
-- **Computational Efficiency:** Linear complexity $O(n)$ for pixel processing
-- **Threshold Interpretability:** Intuitive parameter tuning for industrial deployment
-- **Robustness:** Effective performance with limited training data
+- **Illumination Invariance:** Separates color information from lighting conditions  
+- **Computational Efficiency:** Linear complexity \(O(n)\) for pixel processing  
+- **Threshold Interpretability:** Intuitive parameter tuning for industrial deployment  
+- **Robustness:** Effective performance with limited training data  
 
 **HSV Transformation:**
-$$H = \arctan2(\sqrt{3}(G-B), 2R-G-B) \cdot \frac{180°}{\pi}$$
-$$S = 1 - \frac{3\min(R,G,B)}{R+G+B}$$
-$$V = \frac{R+G+B}{3}$$
+$$
+H = \arctan2(\sqrt{3}(G-B), 2R-G-B) \cdot \frac{180^\circ}{\pi}
+$$
+$$
+S = 1 - \frac{3\min(R,G,B)}{R+G+B}
+$$
+$$
+V = \frac{R+G+B}{3}
+$$
 
-![HSV Segmentation]({{ site.baseurl }}/assets/images/turtlebot_project/hsv_segmentation.png)
+![HSV Segmentation]({{ site.baseurl }}/assets/images/turtlebot_project/hsv_segmentation.png)  
 *Figure 12: HSV color space segmentation results showing crack isolation from background*
 
 ### 4.3 3D Area Calculation Framework
 
-**Camera Calibration Model:**
-Using OAK-D intrinsic parameters, the pixel-to-metric conversion:
-$$\text{ratio}_x = \frac{Z}{f_x}, \quad \text{ratio}_y = \frac{Z}{f_y}$$
+**Camera Calibration Model:**  
+Using OAK-D intrinsic parameters, the pixel-to-metric conversion:  
+$$
+\text{ratio}_x = \frac{Z}{f_x}, \quad \text{ratio}_y = \frac{Z}{f_y}
+$$
 
 **Surface Area Estimation:**
-$$A_{crack} = \sum_{i,j \in \text{crack pixels}} \frac{Z_{i,j}}{f_x} \cdot \frac{Z_{i,j}}{f_y} \cdot \cos(\theta_{i,j})$$
+$$
+A_{crack} = \sum_{i,j \in \text{crack pixels}} \frac{Z_{i,j}}{f_x} \cdot \frac{Z_{i,j}}{f_y} \cdot \cos(\theta_{i,j})
+$$
 
-Where $\theta_{i,j}$ represents the surface normal angle at pixel $(i,j)$.
+Where \(\theta_{i,j}\) represents the surface normal angle at pixel \((i,j)\).
 
 **Error Propagation Analysis:**
-$$\sigma_A^2 = \left(\frac{\partial A}{\partial Z}\right)^2 \sigma_Z^2 + \left(\frac{\partial A}{\partial f_x}\right)^2 \sigma_{f_x}^2 + \left(\frac{\partial A}{\partial f_y}\right)^2 \sigma_{f_y}^2$$
+$$
+\sigma_A^2 = \left(\frac{\partial A}{\partial Z}\right)^2 \sigma_Z^2 + \left(\frac{\partial A}{\partial f_x}\right)^2 \sigma_{f_x}^2 + \left(\frac{\partial A}{\partial f_y}\right)^2 \sigma_{f_y}^2
+$$
 
 ### 4.4 Performance Validation
 
 | Performance Metric | Specification | Achieved Performance |
-|--------------------|---------------|---------------------|
-| **Detection Accuracy** | >90% | 93% |
-| **Area Calculation Error** | <10% | 5% |
-| **Coordinate Mapping Precision** | <15cm | 10cm |
-| **Processing Speed** | >15 fps | 20 fps |
-| **Communication Latency** | <150ms | 100ms |
+|--------------------|---------------|-----------------------|
+| **Detection Accuracy** | >90%         | 93%                   |
+| **Area Calculation Error** | <10%     | 5%                    |
+| **Coordinate Mapping Precision** | <15cm | 10cm                |
+| **Processing Speed** | >15 fps       | 20 fps                |
+| **Communication Latency** | <150ms    | 100ms                 |
 
 ---
 
@@ -282,24 +327,28 @@ $$\sigma_A^2 = \left(\frac{\partial A}{\partial Z}\right)^2 \sigma_Z^2 + \left(\
 
 The navigation system implements a hierarchical control structure:
 
-![Navigation Architecture]({{ site.baseurl }}/assets/images/turtlebot_project/navigation_architectur.png)
+![Navigation Architecture]({{ site.baseurl }}/assets/images/turtlebot_project/navigation_architectur.png)  
 *Figure 14: Navigation system state machine showing event handling hierarchy*
 
 ### 5.2 Multi-Robot Coordination Algorithm
 
 **Priority Assignment Function:**
-$$P(e_i) = w_1 \cdot U(e_i) + w_2 \cdot T(e_i) + w_3 \cdot D(e_i)$$
+$$
+P(e_i) = w_1 \cdot U(e_i) + w_2 \cdot T(e_i) + w_3 \cdot D(e_i)
+$$
 
 Where:
-- $U(e_i)$ = Urgency level of event $i$
-- $T(e_i)$ = Time since event detection
-- $D(e_i)$ = Distance to event location
-- $w_1, w_2, w_3$ = Weighting factors ($w_1 > w_2 > w_3$)
+- \(U(e_i)\) = Urgency level of event \(i\)  
+- \(T(e_i)\) = Time since event detection  
+- \(D(e_i)\) = Distance to event location  
+- \(w_1, w_2, w_3\) = Weighting factors \((w_1 > w_2 > w_3)\)
 
 **Resource Allocation Optimization:**
-$$\min \sum_{i,j} c_{ij}x_{ij} \quad \text{subject to} \quad \sum_j x_{ij} = 1, \sum_i x_{ij} \leq 1$$
+$$
+\min \sum_{i,j} c_{ij}x_{ij} \quad \text{subject to} \quad \sum_j x_{ij} = 1, \sum_i x_{ij} \leq 1
+$$
 
-Where $x_{ij} \in \{0,1\}$ indicates assignment of robot $i$ to task $j$.
+Where \(x_{ij} \in \{0,1\}\) indicates assignment of robot \(i\) to task \(j\).
 
 ### 5.3 Navigation Parameter Optimization
 
@@ -307,17 +356,20 @@ Where $x_{ij} \in \{0,1\}$ indicates assignment of robot $i$ to task $j$.
 
 Original configuration caused navigation failures in constrained environments. The optimization objective:
 
-$$\min_{b} J(b) = \alpha \cdot P_{collision}(b) + \beta \cdot E[T_{stuck}(b)] + \gamma \cdot E[P_{deviation}(b)]$$
+$$
+\min_{b} J(b) = \alpha \cdot P_{collision}(b) + \beta \cdot E[T_{stuck}(b)] + \gamma \cdot E[P_{deviation}(b)]
+$$
 
 Subject to constraints:
-- $b_{min} \leq b \leq b_{max}$
-- $P_{collision}(b) \leq P_{threshold}$
-- $T_{response}(b) \leq T_{max}$
+- \(b_{min} \leq b \leq b_{max}\)
+- \(P_{collision}(b) \leq P_{threshold}\)
+- \(T_{response}(b) \leq T_{max}\)
 
 **Solution:** Reduced inflation radius from 0.4m to 0.1m, resulting in:
-- 60% reduction in stuck events
-- 25% improvement in path efficiency
+- 60% reduction in stuck events  
+- 25% improvement in path efficiency  
 - Maintained collision avoidance safety
+
 
 ---
 
