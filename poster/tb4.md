@@ -1275,3 +1275,7 @@ Please add the following images to `{{ site.baseurl }}/assets/images/turtlebot_p
 24. **future_architecture.png** - Proposed future system architecture
 
 This comprehensive documentation provides a complete technical reference for your industrial safety robot system project, suitable for both academic publication and professional portfolio presentation.
+
+
+
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"> </script>
