@@ -1,4 +1,5 @@
 ---
+layout: single        # ✅ 꼭 필요합니다!
 title: "Industrial Safety Robot System: A Comprehensive Multi-Modal Approach"
 excerpt: "Development and implementation of an autonomous safety monitoring system integrating YOLO-based detection, Kalman filtering, and MQTT communication for industrial hazard prevention"
 date: 2025-01-24
@@ -17,8 +18,9 @@ header:
   teaser: /assets/images/turtlebot_project/system_overview.png
 toc: true
 toc_sticky: true
-mathjax: true     # ✅ 꼭 추가해야 수식 보임!
+mathjax: true
 ---
+
 
 # Industrial Safety Robot System: Team RobotFactory
 
