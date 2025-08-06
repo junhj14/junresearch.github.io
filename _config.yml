@@ -8,6 +8,10 @@ baseurl: "/junresearch.github.io"
 
 markdown: kramdown
 
+kramdown:
+  input: GFM
+  math_engine: mathjax
+
 plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
