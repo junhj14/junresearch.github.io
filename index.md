@@ -6,7 +6,7 @@ mathjax: true
 
 # Welcome to My Blog 👋
 
-- [포스터 보기](/junresearch.github.io/_posts/tb4/)
+- [포스터 보기](/junresearch.github.io/poster/tb4/)
 - [수식 예제](/junresearch.github.io/test-math/)
 
 ## 수식 테스트
