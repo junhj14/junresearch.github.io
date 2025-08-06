@@ -17,6 +17,7 @@ header:
   teaser: /assets/images/turtlebot_project/system_overview.png
 toc: true
 toc_sticky: true
+mathjax: true     # ✅ 꼭 추가해야 수식 보임!
 ---
 
 # Industrial Safety Robot System: Team RobotFactory
