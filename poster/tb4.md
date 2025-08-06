@@ -68,18 +68,19 @@ Where:
 **Objective Function:**
 $$\min \int_0^T R(t) \, dt \quad \text{subject to} \quad \sum_{j=1}^m C_j \leq B$$
 
-Where $C_j$ represents deployment costs and $B$ is the budget constraint.
+Where \( C_j \) represents deployment costs and \( B \) is the budget constraint.
 
 ### 1.3 Root Cause Analysis
 
 Statistical analysis indicates 78.2% of industrial accidents stem from behavioral factors, necessitating automated monitoring solutions.
 
-| Risk Factor | Mathematical Model | Mitigation Strategy |
-|-------------|-------------------|-------------------|
-| **Cognitive Fatigue** | $V(t) = V_0 e^{-\lambda t}$ | Continuous monitoring |
-| **Cultural Pressure** | $P_{speed} > P_{safety}$ | Automated enforcement |
-| **Monitoring Gaps** | $\eta_{monitoring} < \eta_{required}$ | Real-time surveillance |
-| **Communication Barriers** | $I_{effective} = I_{transmitted} \cdot \alpha$ | Visual/audio alerts |
+| Risk Factor           | Mathematical Model                                       | Mitigation Strategy        |
+|-----------------------|----------------------------------------------------------|----------------------------|
+| **Cognitive Fatigue** | \( V(t) = V_0 e^{-\lambda t} \)                          | Continuous monitoring      |
+| **Cultural Pressure** | \( P_{\text{speed}} > P_{\text{safety}} \)              | Automated enforcement      |
+| **Monitoring Gaps**   | \( \eta_{\text{monitoring}} < \eta_{\text{required}} \) | Real-time surveillance     |
+| **Communication Barriers** | \( I_{\text{effective}} = I_{\text{transmitted}} \cdot \alpha \) | Visual/audio alerts |
+
 
 ![Risk Factor Analysis]({{ site.baseurl }}/assets/images/turtlebot_project/risk_factors.png)
 *Figure 3: Pie chart showing distribution of accident causes with behavioral factors highlighted*
