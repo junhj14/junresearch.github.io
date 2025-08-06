@@ -10,7 +10,7 @@ markdown: kramdown
 
 plugins:
   - jekyll-remote-theme
-  - jekyll-include-cache   # ← ✅ 이 줄 추가!
+  - jekyll-include-cache
 
 defaults:
   - scope:
@@ -20,11 +20,11 @@ defaults:
       layout: single
       toc: true
       toc_sticky: true
-      author_profile: true   # ✅ 이게 핵심
+      author_profile: true
 
 author:
   name: "Jun Hyojae"
-  avatar: "/assets/images/profile.jpg"  # ← 이미지 없으면 주석처리 가능
+  avatar: "/assets/images/profile.jpg"
   bio: "Industrial AI & Cognitive Robotics Engineer"
   location: "Seoul, Korea"
   email: "j4512j@naver.com"
@@ -39,4 +39,4 @@ author:
       icon: "fas fa-envelope"
       url: "mailto:j4512j@naver.com"
 
-mathjax: true
+mathjax: true     # ✅ 이 줄이 있어야 수식이 보임!
