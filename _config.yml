@@ -4,7 +4,7 @@ minimal_mistakes_skin: "default"
 title: "Jun's Blog"
 description: "Industrial AI and Robotics by Jun Hyojae"
 url: "https://junhj14.github.io"
-baseurl: "/junresearch.github.io"    # 그대로 유지해도 됨
+baseurl: "/junresearch.github.io"
 
 markdown: kramdown
 
@@ -26,7 +26,7 @@ defaults:
       toc_sticky: true
       author_profile: true
 
-mathjax: true     # ✅ 전역 MathJax 설정
+mathjax: true     # 전역 설정
 
 include:
   - _includes/head-custom.html
