@@ -6,8 +6,8 @@ mathjax: true
 
 # Welcome to My Blog
 
-- [Poster Page](/poster/tb4/)
-- [Page 2](/poster/p2/)
+- [Poster Page](/_posts/tb4/)
+- [Page 2](/p2/)
 
 ---
 
