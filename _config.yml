@@ -22,7 +22,9 @@ defaults:
       toc_sticky: true
       author_profile: true
 mathjax: true     # ✅ 이 줄이 있어야 수식이 보임!
-
+include:
+  - _includes/head-custom.html
+  
 author:
   name: "Jun Hyojae"
   avatar: "/assets/images/profile.jpg"
