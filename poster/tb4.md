@@ -23,15 +23,13 @@ permalink: /poster/tb4/
 ---
 
 
-# Industrial Safety Robot System: Team RobotFactory
-
 > *"In the intersection of mathematics and machinery, we find not just efficiency, but the possibility of preserving human life itself."*
 
 ## Abstract
 
 This paper presents a comprehensive industrial safety robot system developed by Team RobotFactory as part of the K-Digital Training program. The system integrates real-time object detection, autonomous navigation, and distributed communication protocols to address critical safety challenges in industrial environments. Through rigorous mathematical analysis and experimental validation, we achieved 93% detection accuracy with 24.7% noise reduction via advanced Kalman filtering techniques.
 
-![System Overview]({{ site.baseurl }}/assets/images/turtlebot_project/system_overview.png)
+![System Overview](/assets/images/turtlebot_project/system_overview.png)
 *Figure 1: Complete system architecture showing multi-robot coordination and MQTT-based communication*
 
 ---
@@ -48,41 +46,37 @@ Industrial safety remains a persistent challenge despite technological advanceme
 - Safety right exercise rate: Merely 16.3% have exercised work refusal
 - Post-refusal protection: Only 13.8% felt adequately protected
 
-![Industrial Accident Statistics]({{ site.baseurl }}/assets/images/turtlebot_project/accident_statistics.png)
+![Industrial Accident Statistics](/assets/images/turtlebot_project/accident_statistics.png)
 *Figure 2: Industrial accident trends 2021-2024 showing persistent safety challenges*
 
 ### 1.2 Mathematical Risk Framework
 
-We define the instantaneous risk level $R(t)$ at time $t$ as:
+We define the instantaneous risk level $$R(t)$$ at time $$t$$ as:
 
-$$
-R(t) = \sum_{i=1}^{n} P_i(t) \cdot S_i \cdot E_i(t)
-$$
+$$R(t) = \sum_{i=1}^{n} P_i(t) \cdot S_i \cdot E_i(t)$$
 
 Where:
-
-- \(P_i(t)\) = Time-dependent probability of incident type \(i\)  
-- \(S_i\) = Severity coefficient for incident \(i\)  
-- \(E_i(t)\) = Dynamic exposure frequency to risk \(i\)
+- $$P_i(t)$$ = Time-dependent probability of incident type $$i$$
+- $$S_i$$ = Severity coefficient for incident $$i$$
+- $$E_i(t)$$ = Dynamic exposure frequency to risk $$i$$
 
 **Objective Function:**
 $$\min \int_0^T R(t) \, dt \quad \text{subject to} \quad \sum_{j=1}^m C_j \leq B$$
 
-Where \( C_j \) represents deployment costs and \( B \) is the budget constraint.
+Where $$C_j$$ represents deployment costs and $B$ is the budget constraint.
 
 ### 1.3 Root Cause Analysis
 
 Statistical analysis indicates 78.2% of industrial accidents stem from behavioral factors, necessitating automated monitoring solutions.
 
-| Risk Factor           | Mathematical Model                                       | Mitigation Strategy        |
-|-----------------------|----------------------------------------------------------|----------------------------|
-| **Cognitive Fatigue** | $$( V(t) = V_0 e^{-\lambda t} )$$                          | Continuous monitoring      |
-| **Cultural Pressure** | $$( P_{\text{speed}} > P_{\text{safety}} )$$              | Automated enforcement      |
-| **Monitoring Gaps**   | $$( \eta_{\text{monitoring}} < \eta_{\text{required}} )$$ | Real-time surveillance     |
-| **Communication Barriers** | $$( I_{\text{effective}} = I_{\text{transmitted}} \cdot \alpha )$$ | Visual/audio alerts |
+| Risk Factor | Mathematical Model | Mitigation Strategy |
+|-------------|-------------------|-------------------|
+| **Cognitive Fatigue** | $$V(t) = V_0 e^{-\lambda t}$$ | Continuous monitoring |
+| **Cultural Pressure** | $$P_{speed} > P_{safety}$$ | Automated enforcement |
+| **Monitoring Gaps** | $$\eta_{monitoring} < \eta_{required}$$ | Real-time surveillance |
+| **Communication Barriers** | $$I_{effective} = I_{transmitted} \cdot \alpha$$ | Visual/audio alerts |
 
-
-![Risk Factor Analysis]({{ site.baseurl }}/assets/images/turtlebot_project/risk_factors.png)
+![Risk Factor Analysis](/assets/images/turtlebot_project/risk_factors.png)
 *Figure 3: Pie chart showing distribution of accident causes with behavioral factors highlighted*
 
 ---
@@ -100,30 +94,25 @@ Statistical analysis indicates 78.2% of industrial accidents stem from behaviora
 | **Navigation** | NAV2 Stack | Proven autonomous navigation |
 | **Platform** | Ubuntu 22.04 + ROS2 | Stability and community support |
 
-![Technology Stack]({{ site.baseurl }}/assets/images/turtlebot_project/tech_stack.png)  
+![Technology Stack](/assets/images/turtlebot_project/tech_stack.png)
 *Figure 4: Comprehensive technology stack with integration interfaces*
 
 ### 2.2 Distributed System Architecture
 
 The system employs a hub-and-spoke topology with fault-tolerant communication:
 
-![System Architecture Diagram]({{ site.baseurl }}/assets/images/turtlebot_project/system_overvies.png)  
+
+![System Architecture Diagram](/assets/images/turtlebot_project/system_overvies.png)
 *Figure 5: Detailed system architecture showing component interactions and data flow*
 
 ### 2.3 Reliability Analysis
 
-For a distributed system with \( n \) robots, system reliability \( R_{\text{system}} \) is:
+For a distributed system with $n$ robots, system reliability $$R_{system}$$ is:
 
-$$
-R_{\text{system}} = 1 - \prod_{i=1}^{n}(1 - R_i)
-$$
+$$R_{system} = 1 - \prod_{i=1}^{n}(1 - R_i)$$
 
-With individual robot reliability \( R_i = 0.95 \), the system reliability for \( n = 4 \) robots:
-
-$$
-R_{\text{system}} = 1 - (1 - 0.95)^4 = 0.99999375
-$$
-
+With individual robot reliability $R_i = 0.95$, the system reliability for $n = 4$ robots:
+$$R_{system} = 1 - (1 - 0.95)^4 = 0.99999375$$
 
 ---
 
@@ -138,6 +127,7 @@ $$
 - **Resolution:** 640×640 pixels
 - **Augmentation:** Rotation (±15°), Scaling (0.8-1.2), Brightness (±20%)
 
+
 ### 3.2 Model Performance Analysis
 
 Comparative analysis across YOLO variants using inference time distribution:
@@ -148,7 +138,7 @@ Comparative analysis across YOLO variants using inference time distribution:
 | **YOLOv8n** | **3.8** | **1.01** | **0.856** | **6.2** |
 | YOLOv11n | 4.5 | 1.22 | 0.851 | 5.9 |
 
-![Model Performance Comparison]({{ site.baseurl }}/assets/images/turtlebot_project/model_comparison.png)  
+![Model Performance Comparison](/assets/images/turtlebot_project/model_comparison.png)
 *Figure 7: Box plots showing inference time distribution across different YOLO models*
 
 **Selection Rationale:** YOLOv8n demonstrates optimal balance of accuracy, speed, and consistency for real-time industrial deployment.
@@ -156,92 +146,62 @@ Comparative analysis across YOLO variants using inference time distribution:
 ### 3.3 Mathematical Framework for Detection
 
 **Spatial Detection Universe:**
-
-$$
-\mathcal{U} = \{(x,y) \mid 0 \leq x \leq W, 0 \leq y \leq H\}
-$$
+$$\mathcal{U} = \{(x,y) \mid 0 \leq x \leq W, 0 \leq y \leq H\}$$
 
 **Detection Confidence Mapping:**
-
-$$
-C(x,y) = \begin{cases} 
+$$C(x,y) = \begin{cases} 
 \sigma(\mathbf{w}^T \phi(x,y) + b) & \text{if } (x,y) \in \text{ROI} \\
 0 & \text{otherwise}
-\end{cases}
-$$
+\end{cases}$$
 
-Where \( \phi(x,y) \) represents feature extraction at pixel \( (x,y) \) and \( \sigma \) is the sigmoid activation.
+Where $$\phi(x,y)$$ represents feature extraction at pixel $$(x,y)$$ and $$\sigma$$ is the sigmoid activation.
 
 **PPE Compliance Assessment:**
+$$\text{PPE}_{score} = \prod_{i \in \{\text{helmet, vest, boots}\}} \max_{j} C_i^{(j)}$$
 
-$$
-\text{PPE}_{score} = \prod_{i \in \{\text{helmet, vest, boots}\}} \max_{j} C_i^{(j)}
-$$
-
-![Detection Framework]({{ site.baseurl }}/assets/images/turtlebot_project/detection_framework.png)  
+![Detection Framework](/assets/images/turtlebot_project/detection_framework.png)
 *Figure 8: Visual representation of detection confidence mapping and PPE scoring system*
 
 ### 3.4 Noise Analysis & Kalman Filter Design
 
 **Sensor Noise Characterization:**
-
 Statistical analysis of OAK-D depth measurements reveals:
-- Standard Deviation: \( \sigma = 0.4261 \, \text{m} \)
-- Variance: \( \sigma^2 = 0.1815 \, \text{m}^2 \)
-- Temporal Correlation: \( \rho(\tau) = 0.85 e^{-\tau/2.3} \)
+- Standard Deviation: $$\sigma = 0.4261$$ m
+- Variance: $$\sigma^2 = 0.1815$$ m²
+- Temporal Correlation: $$\rho(\tau) = 0.85 e^{-\tau/2.3}$$
+
 
 **State Space Model Design:**
 
 For tracking human position and velocity, we employ a 4D state vector:
-
-$$
-\mathbf{x}_k = [x_k, y_k, \dot{x}_k, \dot{y}_k]^T
-$$
+$$\mathbf{x}_k = [x_k, y_k, \dot{x}_k, \dot{y}_k]^T$$
 
 **Prediction Equations:**
-
-$$
-\mathbf{x}_{k|k-1} = \mathbf{F}\mathbf{x}_{k-1|k-1} + \mathbf{B}\mathbf{u}_k
-$$
-
-$$
-\mathbf{P}_{k|k-1} = \mathbf{F}\mathbf{P}_{k-1|k-1}\mathbf{F}^T + \mathbf{Q}
-$$
+$$\mathbf{x}_{k|k-1} = \mathbf{F}\mathbf{x}_{k-1|k-1} + \mathbf{B}\mathbf{u}_k$$
+$$\mathbf{P}_{k|k-1} = \mathbf{F}\mathbf{P}_{k-1|k-1}\mathbf{F}^T + \mathbf{Q}$$
 
 **Update Equations:**
-
-$$
-\mathbf{K}_k = \mathbf{P}_{k|k-1}\mathbf{H}^T(\mathbf{H}\mathbf{P}_{k|k-1}\mathbf{H}^T + \mathbf{R})^{-1}
-$$
-
-$$
-\mathbf{x}_{k|k} = \mathbf{x}_{k|k-1} + \mathbf{K}_k(\mathbf{z}_k - \mathbf{H}\mathbf{x}_{k|k-1})
-$$
+$$\mathbf{K}_k = \mathbf{P}_{k|k-1}\mathbf{H}^T(\mathbf{H}\mathbf{P}_{k|k-1}\mathbf{H}^T + \mathbf{R})^{-1}$$
+$$\mathbf{x}_{k|k} = \mathbf{x}_{k|k-1} + \mathbf{K}_k(\mathbf{z}_k - \mathbf{H}\mathbf{x}_{k|k-1})$$
 
 Where:
-
-$$
-\mathbf{F} = \begin{bmatrix}
+$$\mathbf{F} = \begin{bmatrix}
 1 & 0 & \Delta t & 0 \\
 0 & 1 & 0 & \Delta t \\
 0 & 0 & 1 & 0 \\
 0 & 0 & 0 & 1
-\end{bmatrix}, \quad
-\mathbf{H} = \begin{bmatrix}
+\end{bmatrix}, \quad \mathbf{H} = \begin{bmatrix}
 1 & 0 & 0 & 0 \\
 0 & 1 & 0 & 0
-\end{bmatrix}
-$$
+\end{bmatrix}$$
 
 **Theoretical Performance Advantage:**
 
 Comparing 2D vs 4D models, the Mean Squared Error difference:
+$$\text{MSE}_{2D} - \text{MSE}_{4D} = (\dot{x}_{k-1})^2(\Delta t)^2 \geq 0$$
 
-$$
-\text{MSE}_{2D} - \text{MSE}_{4D} = (\dot{x}_{k-1})^2(\Delta t)^2 \geq 0
-$$
+This proves the 4D model's theoretical superiority when velocity $$\dot{x}_{k-1} \neq 0$$.
 
-This proves the 4D model's theoretical superiority when velocity \( \dot{x}_{k-1} \neq 0 \).
 
 **Experimental Validation:**
 
@@ -262,62 +222,51 @@ This proves the 4D model's theoretical superiority when velocity \( \dot{x}_{k-1
 
 The crack detection system employs a hybrid approach combining deep learning and classical computer vision:
 
-1. **YOLO-based Region Proposal:** Initial crack candidate identification  
+1. **YOLO-based Region Proposal:** Initial crack candidate identification
 2. **HSV Color Space Segmentation:** Precise crack boundary delineation  
-3. **Depth-Aware Area Calculation:** 3D surface area estimation  
-4. **Global Coordinate Mapping:** Integration with navigation system  
+3. **Depth-Aware Area Calculation:** 3D surface area estimation
+4. **Global Coordinate Mapping:** Integration with navigation system
+
 
 ### 4.2 HSV Segmentation Methodology
 
 **Rationale for HSV Selection:**
-- **Illumination Invariance:** Separates color information from lighting conditions  
-- **Computational Efficiency:** Linear complexity \(O(n)\) for pixel processing  
-- **Threshold Interpretability:** Intuitive parameter tuning for industrial deployment  
-- **Robustness:** Effective performance with limited training data  
+- **Illumination Invariance:** Separates color information from lighting conditions
+- **Computational Efficiency:** Linear complexity $$O(n)$$ for pixel processing
+- **Threshold Interpretability:** Intuitive parameter tuning for industrial deployment
+- **Robustness:** Effective performance with limited training data
 
 **HSV Transformation:**
-$$
-H = \arctan2(\sqrt{3}(G-B), 2R-G-B) \cdot \frac{180^\circ}{\pi}
-$$
-$$
-S = 1 - \frac{3\min(R,G,B)}{R+G+B}
-$$
-$$
-V = \frac{R+G+B}{3}
-$$
+$$H = \arctan2(\sqrt{3}(G-B), 2R-G-B) \cdot \frac{180°}{\pi}$$
+$$S = 1 - \frac{3\min(R,G,B)}{R+G+B}$$
+$$V = \frac{R+G+B}{3}$$
 
-![HSV Segmentation]({{ site.baseurl }}/assets/images/turtlebot_project/hsv_segmentation.png)  
+![HSV Segmentation](/assets/images/turtlebot_project/hsv_segmentation.png)
 *Figure 12: HSV color space segmentation results showing crack isolation from background*
 
 ### 4.3 3D Area Calculation Framework
 
-**Camera Calibration Model:**  
-Using OAK-D intrinsic parameters, the pixel-to-metric conversion:  
-$$
-\text{ratio}_x = \frac{Z}{f_x}, \quad \text{ratio}_y = \frac{Z}{f_y}
-$$
+**Camera Calibration Model:**
+Using OAK-D intrinsic parameters, the pixel-to-metric conversion:
+$$\text{ratio}_x = \frac{Z}{f_x}, \quad \text{ratio}_y = \frac{Z}{f_y}$$
 
 **Surface Area Estimation:**
-$$
-A_{crack} = \sum_{i,j \in \text{crack pixels}} \frac{Z_{i,j}}{f_x} \cdot \frac{Z_{i,j}}{f_y} \cdot \cos(\theta_{i,j})
-$$
+$$A_{crack} = \sum_{i,j \in \text{crack pixels}} \frac{Z_{i,j}}{f_x} \cdot \frac{Z_{i,j}}{f_y} \cdot \cos(\theta_{i,j})$$
 
-Where \(\theta_{i,j}\) represents the surface normal angle at pixel \((i,j)\).
+Where $$\theta_{i,j}$$ represents the surface normal angle at pixel $$(i,j)$$.
 
 **Error Propagation Analysis:**
-$$
-\sigma_A^2 = \left(\frac{\partial A}{\partial Z}\right)^2 \sigma_Z^2 + \left(\frac{\partial A}{\partial f_x}\right)^2 \sigma_{f_x}^2 + \left(\frac{\partial A}{\partial f_y}\right)^2 \sigma_{f_y}^2
-$$
+$$\sigma_A^2 = \left(\frac{\partial A}{\partial Z}\right)^2 \sigma_Z^2 + \left(\frac{\partial A}{\partial f_x}\right)^2 \sigma_{f_x}^2 + \left(\frac{\partial A}{\partial f_y}\right)^2 \sigma_{f_y}^2$$
 
 ### 4.4 Performance Validation
 
 | Performance Metric | Specification | Achieved Performance |
-|--------------------|---------------|-----------------------|
-| **Detection Accuracy** | >90%         | 93%                   |
-| **Area Calculation Error** | <10%     | 5%                    |
-| **Coordinate Mapping Precision** | <15cm | 10cm                |
-| **Processing Speed** | >15 fps       | 20 fps                |
-| **Communication Latency** | <150ms    | 100ms                 |
+|--------------------|---------------|---------------------|
+| **Detection Accuracy** | >90% | 93% |
+| **Area Calculation Error** | <10% | 5% |
+| **Coordinate Mapping Precision** | <15cm | 10cm |
+| **Processing Speed** | >15 fps | 20 fps |
+| **Communication Latency** | <150ms | 100ms |
 
 ---
 
@@ -327,28 +276,24 @@ $$
 
 The navigation system implements a hierarchical control structure:
 
-![Navigation Architecture]({{ site.baseurl }}/assets/images/turtlebot_project/navigation_architectur.png)  
+![Navigation Architecture](/assets/images/turtlebot_project/navigation_architecture.png)
 *Figure 14: Navigation system state machine showing event handling hierarchy*
 
 ### 5.2 Multi-Robot Coordination Algorithm
 
 **Priority Assignment Function:**
-$$
-P(e_i) = w_1 \cdot U(e_i) + w_2 \cdot T(e_i) + w_3 \cdot D(e_i)
-$$
+$$P(e_i) = w_1 \cdot U(e_i) + w_2 \cdot T(e_i) + w_3 \cdot D(e_i)$$
 
 Where:
-- \(U(e_i)\) = Urgency level of event \(i\)  
-- \(T(e_i)\) = Time since event detection  
-- \(D(e_i)\) = Distance to event location  
-- \(w_1, w_2, w_3\) = Weighting factors \((w_1 > w_2 > w_3)\)
+- $$U(e_i)$$ = Urgency level of event $i$
+- $$T(e_i)$$ = Time since event detection
+- $$D(e_i)$$ = Distance to event location
+- $$w_1, w_2, w_3$$ = Weighting factors ($$w_1 > w_2 > w_3$$)
 
 **Resource Allocation Optimization:**
-$$
-\min \sum_{i,j} c_{ij}x_{ij} \quad \text{subject to} \quad \sum_j x_{ij} = 1, \sum_i x_{ij} \leq 1
-$$
+$$\min \sum_{i,j} c_{ij}x_{ij} \quad \text{subject to} \quad \sum_j x_{ij} = 1, \sum_i x_{ij} \leq 1$$
 
-Where \(x_{ij} \in \{0,1\}\) indicates assignment of robot \(i\) to task \(j\).
+Where $$x_{ij} \in \{0,1\}$$ indicates assignment of robot $$i$$ to task $$j$$.
 
 ### 5.3 Navigation Parameter Optimization
 
@@ -356,20 +301,17 @@ Where \(x_{ij} \in \{0,1\}\) indicates assignment of robot \(i\) to task \(j\).
 
 Original configuration caused navigation failures in constrained environments. The optimization objective:
 
-$$
-\min_{b} J(b) = \alpha \cdot P_{collision}(b) + \beta \cdot E[T_{stuck}(b)] + \gamma \cdot E[P_{deviation}(b)]
-$$
+$$\min_{b} J(b) = \alpha \cdot P_{collision}(b) + \beta \cdot E[T_{stuck}(b)] + \gamma \cdot E[P_{deviation}(b)]$$
 
 Subject to constraints:
-- \(b_{min} \leq b \leq b_{max}\)
-- \(P_{collision}(b) \leq P_{threshold}\)
-- \(T_{response}(b) \leq T_{max}\)
+- $$b_{min} \leq b \leq b_{max}$$
+- $$P_{collision}(b) \leq P_{threshold}$$
+- $$T_{response}(b) \leq T_{max}$$
 
 **Solution:** Reduced inflation radius from 0.4m to 0.1m, resulting in:
-- 60% reduction in stuck events  
-- 25% improvement in path efficiency  
+- 60% reduction in stuck events
+- 25% improvement in path efficiency
 - Maintained collision avoidance safety
-
 
 ---
 
@@ -379,7 +321,7 @@ Subject to constraints:
 
 **Reliability Comparison for Industrial Networks:**
 
-For a network with $n$ segments, failure probability analysis:
+For a network with $$n$$ segments, failure probability analysis:
 
 **ROS2 DDS (Mesh Topology):**
 $$P_{DDS_{failure}} = 1 - \prod_{i=1}^{n} P_{segment_i}$$
@@ -387,9 +329,9 @@ $$P_{DDS_{failure}} = 1 - \prod_{i=1}^{n} P_{segment_i}$$
 **MQTT (Star Topology):**
 $$P_{MQTT_{success}} = \prod_{i=1}^{n} P_{device \rightarrow broker}$$
 
-Since devices connect independently: $P_{MQTT_{success}} \gg P_{DDS_{success}}$
+Since devices connect independently: $$P_{MQTT_{success}} \gg P_{DDS_{success}}$$
 
-![Protocol Comparison]({{ site.baseurl }}/assets/images/turtlebot_project/protocol_comparison.png)
+![Protocol Comparison](/assets/images/turtlebot_project/protocol_comparison.png)
 *Figure 16: Network topology comparison showing MQTT's resilience advantages*S
 
 ### 6.2 Communication Performance Analysis
@@ -408,8 +350,8 @@ Since devices connect independently: $P_{MQTT_{success}} \gg P_{DDS_{success}}$
 **Message Overhead Analysis:**
 
 For 100-byte payload:
-- MQTT: 2-7% overhead ($\eta_{MQTT} = 0.93-0.98$)
-- HTTP: 200-800% overhead ($\eta_{HTTP} = 0.12-0.33$)
+- MQTT: 2-7% overhead ($$\eta_{MQTT} = 0.93-0.98$$)
+- HTTP: 200-800% overhead ($$\eta_{HTTP} = 0.12-0.33$$)
 
 $$\text{Efficiency Ratio} = \frac{\eta_{MQTT}}{\eta_{HTTP}} \approx 3-8$$
 
@@ -441,10 +383,10 @@ Based on performance analysis, 10 fps provides optimal balance of reliability an
 $$T_{total} = T_{detection} + T_{processing} + T_{communication} + T_{response}$$
 
 Measured components:
-- $T_{detection} = 52 \pm 8$ ms (YOLOv8n inference)
-- $T_{processing} = 23 \pm 5$ ms (coordinate transformation)
-- $T_{communication} = 95 \pm 15$ ms (MQTT round-trip)
-- $T_{response} = 180 \pm 30$ ms (navigation initiation)
+- $$T_{detection} = 52 \pm 8$$ ms (YOLOv8n inference)
+- $$T_{processing} = 23 \pm 5$$ ms (coordinate transformation)
+- $$T_{communication} = 95 \pm 15$$ ms (MQTT round-trip)
+- $$T_{response} = 180 \pm 30$$ ms (navigation initiation)
 
 **Total System Response Time: 350 ± 35 ms**
 
@@ -484,7 +426,7 @@ The monitoring dashboard provides real-time visualization and control capabiliti
 - Remote control capabilities
 - Performance metrics display
 
-![Web Dashboard]({{ site.baseurl }}/assets/images/turtlebot_project/web_dashboard.png)
+![Web Dashboard](/assets/images/turtlebot_project/web_dashboard.png)
 *Figure 20: Web-based dashboard interface showing real-time monitoring and control features*
 
 ### 8.2 Mobile Application Integration
@@ -495,7 +437,7 @@ The monitoring dashboard provides real-time visualization and control capabiliti
 - Emergency stop capabilities
 - Location-based event mapping
 
-![Mobile App]({{ site.baseurl }}/assets/images/turtlebot_project/mobile_app.png)
+![Mobile App](/assets/images/turtlebot_project/mobile_app.png)
 *Figure 21: Mobile application interface showing emergency response and notification features*
 
 ---
@@ -515,7 +457,7 @@ Systematic offset between detected object coordinates and actual global map posi
 **Mathematical Error Model:**
 $$\mathbf{p}_{measured} = \mathbf{R}\mathbf{p}_{actual} + \mathbf{t} + \boldsymbol{\epsilon}_{systematic} + \boldsymbol{\eta}_{noise}$$
 
-Where $\mathbf{R}$ and $\mathbf{t}$ represent systematic rotation and translation errors.
+Where $$\mathbf{R}$$ and $$\mathbf{t}$$ represent systematic rotation and translation errors.
 
 **Solution Implementation:**
 
@@ -1303,7 +1245,7 @@ if __name__ == '__main__':
 
 ## Image Requirements Summary
 
-Please add the following images to `{{ site.baseurl }}/assets/images/turtlebot_project/`:
+Please add the following images to `/assets/images/turtlebot_project/`:
 
 1. **system_overview.png** - Complete system architecture diagram
 2. **accident_statistics.png** - Bar chart of industrial accident trends 2021-2024
@@ -1331,7 +1273,6 @@ Please add the following images to `{{ site.baseurl }}/assets/images/turtlebot_p
 24. **future_architecture.png** - Proposed future system architecture
 
 This comprehensive documentation provides a complete technical reference for your industrial safety robot system project, suitable for both academic publication and professional portfolio presentation.
-
 
 
 <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"> </script>
