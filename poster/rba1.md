@@ -1,4 +1,5 @@
 ---
+layout: single
 title: "Robot-Based Precision Concentration Control System: An Integrated Approach to Fluid Dynamic Modeling and Adaptive Control Algorithms"
 
 excerpt: "An autonomous ROS2-based system for high-precision liquid pouring using industrial robotic arms, load cells, and MQTT communication"
@@ -19,6 +20,8 @@ header:
   teaser: /assets/images/liquid_injection/system_architecture.png
 toc: true
 toc_sticky: true
+mathjax: true
+permalink: /poster/rba1/
 ---
 
 > *"Machines translate the intuition of human hands into mathematical formulas. The accuracy of this translation determines the depth of technology."*
