@@ -55,12 +55,15 @@ Industrial safety remains a persistent challenge despite technological advanceme
 
 We define the instantaneous risk level $R(t)$ at time $t$ as:
 
-$R(t) = \sum_{i=1}^{n} P_i(t) \cdot S_i \cdot E_i(t)$
+$$
+R(t) = \sum_{i=1}^{n} P_i(t) \cdot S_i \cdot E_i(t)
+$$
 
 Where:
-- $P_i(t)$ = Time-dependent probability of incident type $i$
-- $S_i$ = Severity coefficient for incident $i$
-- $E_i(t)$ = Dynamic exposure frequency to risk $i$
+
+- \(P_i(t)\) = Time-dependent probability of incident type \(i\)  
+- \(S_i\) = Severity coefficient for incident \(i\)  
+- \(E_i(t)\) = Dynamic exposure frequency to risk \(i\)
 
 **Objective Function:**
 $$\min \int_0^T R(t) \, dt \quad \text{subject to} \quad \sum_{j=1}^m C_j \leq B$$
