@@ -77,9 +77,9 @@ Statistical analysis indicates 78.2% of industrial accidents stem from behaviora
 | Risk Factor           | Mathematical Model                                       | Mitigation Strategy        |
 |-----------------------|----------------------------------------------------------|----------------------------|
 | **Cognitive Fatigue** | $$( V(t) = V_0 e^{-\lambda t} )$$                          | Continuous monitoring      |
-| **Cultural Pressure** | \( P_{\text{speed}} > P_{\text{safety}} \)              | Automated enforcement      |
-| **Monitoring Gaps**   | \( \eta_{\text{monitoring}} < \eta_{\text{required}} \) | Real-time surveillance     |
-| **Communication Barriers** | \( I_{\text{effective}} = I_{\text{transmitted}} \cdot \alpha \) | Visual/audio alerts |
+| **Cultural Pressure** | $$( P_{\text{speed}} > P_{\text{safety}} )$$              | Automated enforcement      |
+| **Monitoring Gaps**   | $$( \eta_{\text{monitoring}} < \eta_{\text{required}} )$$ | Real-time surveillance     |
+| **Communication Barriers** | $$( I_{\text{effective}} = I_{\text{transmitted}} \cdot \alpha )$$ | Visual/audio alerts |
 
 
 ![Risk Factor Analysis]({{ site.baseurl }}/assets/images/turtlebot_project/risk_factors.png)
