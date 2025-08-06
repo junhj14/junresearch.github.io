@@ -1,12 +1,16 @@
 ---
 layout: single
-title: Home
+title: "TB4 Poster"
+date: 2025-01-24
 mathjax: true
+permalink: /poster/tb4/
 ---
+
 
 # Welcome to My Blog
 
-- [Poster Page](/_posts/tb4/)
+- - [Poster Page](/junresearch.github.io/poster/tb4/)
+
 - [Page 2](/p2/)
 
 ---
